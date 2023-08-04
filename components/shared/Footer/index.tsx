@@ -50,7 +50,6 @@ const Footer: FC<FooterProps> = ({ t }) => {
         <div className="d-flex flex-wrap col-12 col-md-7 justify-content-between">
           {linkColumns.map((column, i) => {
             const { items, name } = column;
-            console.log({items});
 
             return (
               <div className="p-5 mb-15 col-12 col-sm-4" key={i + name}>

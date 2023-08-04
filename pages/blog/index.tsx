@@ -1,6 +1,6 @@
 import Layout from "components/shared/Layout";
 import RoutingPath from "components/shared/RoutingPath";
-import { GetStaticProps } from "next";
+import { GetStaticProps, GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useTranslation } from "next-i18next";
