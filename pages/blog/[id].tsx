@@ -207,6 +207,7 @@ export async function getServerSideProps(context: any) {
   // Pass the fetched data as props to the component
   return {
     props: {
+      x:1,
       post,
       ...translations,
     },
