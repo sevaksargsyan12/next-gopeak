@@ -48,7 +48,7 @@ const Blog = () => {
 
 export default Blog;
 
-export async function getServerSideProps(context: any) {
+export async function getStaticProps(context: any) {
   try {
     const translations = (await serverSideTranslations(context.locale ?? "en", [
       "common",
