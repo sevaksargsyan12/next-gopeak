@@ -44,6 +44,6 @@ export default Blog;
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   return {
-    props: { posts: {} }
+    props: { post: {} }
 }
 }
