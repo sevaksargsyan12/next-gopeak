@@ -19,8 +19,10 @@ import SideBar from "../../components/pages/SingleBlog/SideBar";
 import TableContent from "../../components/pages/SingleBlog/TableContent";
 import TableTypes from "../../components/pages/SingleBlog/TableTypes";
 import Image from "next/image";
+import {useRouter} from "next/router";
 
 const Blog = ({post}: any) => {
+  const router = useRouter();
   const {t: commonT} = useTranslation("common");
   const {t: blogT} = useTranslation("blog_page");
   const {t: singleBlogT} = useTranslation("blog_page", {
@@ -34,10 +36,15 @@ const Blog = ({post}: any) => {
   let types: any = {};
   let showContentIndex = 0;
   
-  if(acf?.content_item) {
+  if (acf?.content_item) {
     acf?.content_item?.forEach((item: any, index: number) => {
       const mainIndex = index + 1;
-      tableContent.push({'title': item.title_in_table, 'id': 'content_item_' + mainIndex, type: 'item', num: mainIndex});
+      tableContent.push({
+        'title': item.title_in_table,
+        'id': 'content_item_' + mainIndex,
+        type: 'item',
+        num: mainIndex
+      });
       sectionContents.push({
         'title': item.title,
         'html_id': 'content_item_' + mainIndex,
@@ -118,10 +125,11 @@ const Blog = ({post}: any) => {
                             </div>)}
                           {acf?.author?.social_icon &&
                             (<div className="img">
-                              <Image alt={acf?.author?.name || ''} src={acf?.author?.social_icon }/>
+                              <Image alt={acf?.author?.name || ''} src={acf?.author?.social_icon}/>
                             </div>)}
                         </div>
-                        {acf?.author?.description  && <div className="content-block" dangerouslySetInnerHTML={{__html: acf?.author?.description }}></div>}
+                        {acf?.author?.description && <div className="content-block"
+                                                          dangerouslySetInnerHTML={{__html: acf?.author?.description}}></div>}
                       </div>
                       : null}
                     <div className="post-description" dangerouslySetInnerHTML={{__html: post.content}}>
@@ -188,26 +196,35 @@ const Blog = ({post}: any) => {
 export default Blog;
 
 export async function getServerSideProps(context: any) {
-  const postId = context.params.id;
-  
-  const translations = (await serverSideTranslations(context.locale ?? "en", [
-    "common",
-    "blog_page",
-  ]));
-  
-  let post: any = {};
-  
-  // Fetch data from the server using postId
-  // Replace this with your actual data fetching logic
-  if (postId) {
-    const res = await fetch(`${BACKEND_API_URL}/single/${postId}`);
-    post = await res.json();
+  try {
+    const postId = context.params.id;
+    
+    const translations = (await serverSideTranslations(context.locale ?? "en", [
+      "common",
+      "blog_page",
+    ]));
+    
+    let post: any = {};
+    
+    // Fetch data from the server using postId
+    // Replace this with your actual data fetching logic
+    if (postId) {
+      const res = await fetch(`${BACKEND_API_URL}/single/${postId}`);
+      post = await res.json();
+    }
+    // Pass the fetched data as props to the component
+    return {
+      props: {
+        post,
+        ...translations,
+      },
+    };
+  } catch (e) {
+    console.error('Error fetching data:', e);
+    return {
+      props: {
+        postData: null,
+      },
+    };
   }
-  // Pass the fetched data as props to the component
-  return {
-    props: {
-      post,
-      ...translations,
-    },
-  };
 }
