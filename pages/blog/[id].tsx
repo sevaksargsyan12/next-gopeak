@@ -33,21 +33,10 @@ const Blog = () => {
   const title = blogT("title");
   
   return (
-    
-    <Layout t={commonT}>
-      <Head>
-        <title>kokol1</title>
-        <meta title={title}/>
-        <link rel="canonical" href="https://gopeak.io/blog"/>
-      </Head>
-      <RoutingPath paths={["Home", "Blog"]}/>
-      <>
-          <section className="pt-35 pt-sm-50 pt-md-45 pb-30 pb-sm-40 pb-md-45 col-12 m-auto">
-            Post not found
-          </section>
-        <ScrollToTop smooth component={<IconScrollTop/>}/>
-      </>
-    </Layout>
+  
+    <section className="pt-35 pt-sm-50 pt-md-45 pb-30 pb-sm-40 pb-md-45 col-12 m-auto">
+      Post not found
+    </section>
   );
 };
 
