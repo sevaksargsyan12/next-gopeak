@@ -1,0 +1,71 @@
+{
+  "title": "About Us",
+  "who_we_are": {
+    "heading": "Who We Are",
+    "paragraphs": [
+      "We are a link building agency, and we help a website rank on Google. We have a unique approach to link-building, and our clients notice results of SEO performance in a couple of months.",
+      "We have a strong team of link builders, SEO specialists, and content writers ready to boost your rankings and provide the highest quality links at a competitive price.",
+      "We provide white hat link-building services to all our clients and boost their businesses. Our link builder specialists follow Google policies and provide only high-quality links."
+    ]
+  },
+  "our_mission_and_vision": {},
+  "what_makes_us_better": {
+    "title": "What Makes Us Better in Competition",
+    "items": [
+      {
+        "title": "Our Strategy",
+        "content": "We use the most effective link-building strategies, broken link-building, ABC link exchanges, and guest posts. After the website audit, we offer a link-building strategy and start providing links."
+      },
+      {
+        "title": "Our Approach",
+        "content": "With AI's help, we have the advantage of developing new partnerships faster, which helps us create high-quality and relevant links."
+      },
+      {
+        "title": "Our Flexibility",
+        "content": "We are super flexible in our cooperation with clients and always open to discussions, comments, and feedback."
+      },
+      {
+        "title": "Our Pricing",
+        "content": "We have competitive pricing strategies, as we provide the highest quality links in an adequate pricing strategy."
+      }
+    ]
+  },
+  "co_founder_story": {
+    "title": "Co-founders Story",
+    "image_sub_text": "Co-founders of GoPeak Armen Tevikyan and Dmitri Sahakyan",
+    "co_founders_text": "“You have come to the right place if you want flexibility, clear communication, and high-quality links. We have an individual approach with all our clients and prefer quality over quantity. We provide you with the best links and ensure that your website will rank on Google.”",
+    "about_co_founders": [
+      "Armen Tevikyan and Dmitri Sahakyan are the founders of the GoPeak agency. They started their careers in link building as freelancers and have been working with many websites.",
+      "They provide value with all the links and value-successful cooperation with clients. They think “the best client is a happy client” and strive to provide the best quality links for each niche.",
+      "The agency's experts are ready to do an audit for your website and help you start your website's link-building journey"
+    ]
+  },
+  "meet_our_team": {
+    "title": "Meet Our Team",
+    "team_members_info": [
+      {
+        "name": "Armen",
+        "position": "Co-Founder & CEO",
+        "mail": "armen@gopeak.io"
+      },
+      {
+        "name": "Dima",
+        "position": "Co-Founder",
+        "mail": "dima@gopeak.io"
+      },
+      {
+        "name": "Haykuhi",
+        "position": "Link Building Manager",
+        "mail": "haykuhi@gopeak.io"
+      },
+      {
+        "name": "Anahit",
+        "position": "Content marketing manager",
+        "mail": "anahit@gopeak.io"
+      }
+    ]
+  },
+  "bottom_part": {
+    "heading": "Ready to Increase Your Rankings?"
+  }
+}

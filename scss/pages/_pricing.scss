@@ -1,0 +1,20 @@
+.pricing-background {
+  background-image: url("../../public/assets/images/png/pricing.png");
+  background-size: 100% 75%;
+  background-repeat: no-repeat;
+}
+
+.explore-our-strategy-heading {
+  @media (max-width: $screen-sm-desktop-size) {
+    @include heading-types($h4-fz, $h4-lh, $h4-ls, $h4-fw);
+  }
+  @media (min-width: $screen-sm-desktop-size) {
+    @include heading-types($h3-fz, $h3-lh, $h3-ls, $h3-fw);
+  }
+}
+
+.ready-to-increase-revenue-section {
+  background-image: url("../../public/assets/images/png/ready-to-increase-revenue-bg.png");
+  background-size: cover;
+  box-shadow: 0px 6px 19px rgba(0, 0, 0, 0.05);
+}

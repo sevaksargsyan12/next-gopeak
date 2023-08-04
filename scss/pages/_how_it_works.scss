@@ -1,0 +1,15 @@
+.we-work-with-container {
+  @media (min-width: 800px) {
+    background-image: url("../../public/assets/images/png/we_work_with_efficient_tools_bg.png");
+  }
+  @media (min-width: 400px) and (max-width: 800px) {
+    background-image: url("../../public/assets/images/png/we_work_with_efficient_tools_bg_mobile.png");
+  }
+  @media (max-width: 400px) {
+    background-image: none;
+  }
+  background-position-x: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #f3f3ffb0;
+}

@@ -1,0 +1,62 @@
+{
+  "email": "support@gopeak.io",
+  "layout": {
+    "header": {
+      "how_it_works": "How it Works",
+      "pricing": "Pricing",
+      "about_us": "About Us",
+      "blog": "Blog"
+    },
+    "footer": {
+      "under_logo_text": "Building quality backlinks to boost your website's SEO rankings.",
+      "link_columns": [
+        {
+          "name": "Company",
+          "items": [
+            {
+              "name": "Pricing",
+              "href": "/pricing"
+            },
+            {
+              "name": "How It Works",
+              "href": "/how-we-work"
+            },
+            {
+              "name": "About US",
+              "href": "/about"
+            },
+            {
+              "name": "Contact Us",
+              "href": "/contact"
+            },
+            {
+              "name": "Blog",
+              "href": "/blog"
+            }
+          ]
+        },
+        {
+          "name": "Resources",
+          "items": [
+            {
+              "name": "Terms & Conditions",
+              "href": "/terms-conditions"
+            },
+            {
+              "name": "Privacy Policy",
+              "href": "/privacy-policy"
+            }
+          ]
+        }
+      ],
+      "contacts_column": {
+        "name": "Contacts",
+        "phone_number": "+374 93 846 504"
+      },
+      "copyright": "Copyright © {{year}} All Right Reserved."
+    }
+  },
+  "btn": {
+    "get_started": "Get started"
+  }
+}

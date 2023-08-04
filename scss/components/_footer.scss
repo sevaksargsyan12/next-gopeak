@@ -1,0 +1,6 @@
+.footer-link {
+  &:hover {
+    @extend .text-white;
+    @extend .text-underline;
+  }
+}

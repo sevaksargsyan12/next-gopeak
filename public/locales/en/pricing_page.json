@@ -1,0 +1,111 @@
+{
+  "title": "Pricing",
+  "plans_and_pricing": {
+    "heading": "Plans & Pricing",
+    "sub_heading": "Choose your plan now and get free consultation",
+    "plans": [
+      {
+        "name": "Growth",
+        "price": "2499",
+        "monthly_or_yearly": "monthly",
+        "benefits": [
+          "7 articles month",
+          "Keyword research",
+          "Minimum 1500 word",
+          "Competitor audit"
+        ],
+        "query": "growth"
+      },
+      {
+        "name": "Pro",
+        "price": "4000",
+        "monthly_or_yearly": "monthly",
+        "benefits": [
+          "12 Powerful Links from High Authority websites",
+          "Minimum DR 60+",
+          "Minimum 10,000+ Monthly Traffic",
+          "Reserved for B2B and SaaS customers only"
+        ],
+        "query": "pro"
+      },
+      {
+        "name": "Enterprise",
+        "price": "4499",
+        "monthly_or_yearly": "monthly",
+        "benefits": [
+          "Link building",
+          "Content writing",
+          "5 - articles",
+          "15 - links"
+        ],
+        "query": "enterprise"
+      }
+    ]
+  },
+  "explore_our_strategy": {
+    "heading": "Explore Our Strategies",
+    "sub_heading": "We tailor our unique strategies to meet the individual needs of each client.",
+    "strategy_cards": [
+      {
+        "heading": "New Website Owners",
+        "content": "Looking to improve your website's search engine ranking? Our team of experts is here to help. Contact us to discuss a customized plan for your business. We'll provide guidance on the importance of backlinks and how to effectively track them for optimal results."
+      },
+      {
+        "heading": "Startups",
+        "content": "We're dedicated to identifying your target niche and boosting your traffic and search engine rankings within that niche. Contact us to learn more about our SEO services."
+      },
+      {
+        "heading": "Enterprisers",
+        "content": "We're delighted to collaborate with your SEO team. Contact us to explore how our services can complement your team's efforts and achieve your desired outcomes."
+      }
+    ]
+  },
+  "FAQ": {
+    "heading": "Have Questions? Let’s Find Answers",
+    "link_building_pricing_category": "Link Building Pricing",
+    "link_building_pricing_items": [
+      {
+        "question": "What is included in each pricing plan?",
+        "answer": "Each pricing plan includes different services, such as the number of backlinks, types of backlinks, backlink audits, keyword research, content writing, technical SEO audits, and more. Please refer to the pricing page for detailed information."
+      },
+      {
+        "question": "Do you offer a free trial?",
+        "answer": "No, we do not offer a free trial. However, we offer a consultation to discuss your needs and goals and provide a customized plan."
+      },
+      {
+        "question": "How long does it take to see results?",
+        "answer": "The time it takes to see results varies depending on several factors, including the competition in your industry, your website's current state, and the project's scope. However, we aim to deliver results within the first few months of starting the project."
+      },
+      {
+        "question": "How many links do you build per month?",
+        "answer": "The number of links we build per month depends on various factors, including the size of your website, the competitiveness of your industry, and the number of links you wish to acquire. <br/><br/> We offer a safe volume of backlinks for each website. And depending on the scope of the project and your budget, we finalize the number of links needs for each month. <br/><br/> We offer customized link-building packages to fit your specific needs and budget. We usually build 10-40 links for a month for each website."
+      },
+      {
+        "question": "What are white-hat links?",
+        "answer": "White-hat links refer to backlinks obtained through ethical and legitimate means, such as creating quality content and earning links naturally through outreach and relationship-building. These links comply with search engine guidelines and help improve the website's authority and ranking. White-hat link building practices focus on building relationships with other websites and creating content that provides value to the user rather than spamming or manipulating search engines to obtain links."
+      }
+    ],
+    "payments_category": "Payments",
+    "payments_items": [
+      {
+        "question": "How Do Payments Work?",
+        "answer": "At GoPeak, we are very flexible with payments. We offer different payment plans and options based on your chosen services. For monthly plans, payment is due at the beginning of each month. For one-time projects, payment is due before the project begins. We accept payments via major credit cards, PayPal, and bank wire transfers. We will send you an invoice with the payment details and instructions for payment."
+      },
+      {
+        "question": "Are there any hidden costs or fees?",
+        "answer": "No, we are transparent about our pricing and do not have any hidden costs or fees. Our pricing plans are clearly outlined on our website, and any additional services or charges will be discussed with you beforehand"
+      },
+      {
+        "question": "Can I Cancel My Plan or Subscription?",
+        "answer": "Yes, you can cancel your plan or subscription at any time. You can cancel monthly plans before the next billing cycle to avoid being charged for the upcoming month. For one-time projects, you can cancel before the project begins. If you have questions about canceling your plan or subscription, please contact our customer support team."
+      },
+      {
+        "question": "Do You Offer Refunds?",
+        "answer": "We strive to provide the best link building services to our clients, and if you are not satisfied with our services, you can have refunds minus the fees we had to invest in the link building process."
+      }
+    ]
+  },
+  "increase_revenue": {
+    "heading": "Ready to Increase the Revenue?"
+  }
+}

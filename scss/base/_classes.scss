@@ -1,0 +1,140 @@
+// ATTENTION!!! This is for custom classes/styles, try to avoid it and use global classes if possible
+.cursor {
+  &-default {
+    cursor: default;
+  }
+  &-pointer {
+    cursor: pointer;
+  }
+  &-text {
+    cursor: text;
+  }
+}
+
+.no-select {
+  @include no-select;
+}
+
+.no-scroll-bar {
+  @include no-scroll-bar;
+}
+
+.no-events {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+.op {
+  &-0 {
+    opacity: 0;
+  }
+  &-1 {
+    opacity: 0.1;
+  }
+  &-2 {
+    opacity: 0.2;
+  }
+  &-3 {
+    opacity: 0.3;
+  }
+  &-4 {
+    opacity: 0.4;
+  }
+  &-5 {
+    opacity: 0.5;
+  }
+  &-6 {
+    opacity: 0.6;
+  }
+  &-7 {
+    opacity: 0.7;
+  }
+  &-8 {
+    opacity: 0.8;
+  }
+  &-9 {
+    opacity: 0.9;
+  }
+}
+
+.rotate {
+  &-3-15-n {
+    @include rotate(-3.15);
+  }
+  &-45 {
+    @include rotate(45);
+  }
+  &-50 {
+    @include rotate(50);
+  }
+  &-135 {
+    @include rotate(135);
+  }
+  &-180 {
+    @include rotate(180);
+  }
+  &-225 {
+    @include rotate(225);
+  }
+  &-270 {
+    @include rotate(270);
+  }
+  &-315 {
+    @include rotate(315);
+  }
+}
+
+.flip {
+  &-x {
+    @include rotateX(180);
+  }
+  &-y {
+    @include rotateY(180);
+  }
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.overflow {
+  &-hidden {
+    overflow: hidden !important;
+  }
+  &-auto {
+    overflow: auto !important;
+  }
+  &-scroll {
+    overflow: scroll !important;
+  }
+  &-visible {
+    overflow: visible !important;
+  }
+}
+
+.skew {
+  &-y {
+    &-1 {
+      @include skewY(1);
+    }
+    &-2 {
+      @include skewY(2);
+    }
+    &-3 {
+      @include skewY(3);
+    }
+    &--1 {
+      @include skewY(-1);
+    }
+    &--2 {
+      @include skewY(-2);
+    }
+    &--3 {
+      @include skewY(-3);
+    }
+  }
+}
+
+.no-resize {
+  resize: none;
+}

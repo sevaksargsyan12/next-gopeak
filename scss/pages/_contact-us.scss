@@ -1,0 +1,40 @@
+.contact-us-background {
+  background-image: url("../../public/assets/images/png/contact-us.png");
+  background-size: 100% 85%;
+  background-repeat: no-repeat;
+}
+
+.contact-us-heading {
+  @media (max-width: $screen-mobile-size) {
+    @include heading-types($h4-fz, $h4-lh, $h4-ls, $h4-fw);
+  }
+}
+
+.contact-us-subheading {
+  @media (min-width: $screen-sm-desktop-size) {
+    &::after {
+      content: "";
+      background-image: url("../../public/assets/images/png/envelop-plain-with-path.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 330px;
+      height: 220px;
+      position: absolute;
+      top: -115px;
+    }
+  }
+}
+
+.contact-us-bottom-section {
+  background-image: url("../../public/assets/images/png/btn-color-effect.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.ready-to-talk-business-heading {
+  @media (max-width: $screen-mobile-size) {
+    @include heading-types($h4-fz, $h4-lh, $h4-ls, $h4-fw);
+  }
+}
+
+

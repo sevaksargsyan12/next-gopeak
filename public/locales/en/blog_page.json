@@ -1,0 +1,24 @@
+{
+  "title": "Blog",
+  "search_section": {
+    "heading": "Welcome to Our Blog",
+    "placeholder": "Search for articles",
+    "search_result": "Search result",
+    "no_result": "No results"
+  },
+  "popular_articles_section": {
+    "title": "Popular Articles"
+  },
+  "latest_articles_section": {
+    "title": "Latest Articles",
+    "load_more": "Load More"
+  },
+  "get_interesting_staff_section": {
+    "title": "Get Interesting Staff Right to Your Inbox!",
+    "button": "Subscribe",
+    "placeholder": "Your Email"
+  },
+  "single" : {
+    "similar": "More Articles Like This"
+  }
+}
