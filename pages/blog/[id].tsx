@@ -20,13 +20,13 @@ import TableContent from "../../components/pages/SingleBlog/TableContent";
 import TableTypes from "../../components/pages/SingleBlog/TableTypes";
 import Image from "next/image";
 import {useRouter} from "next/router";
-import {GetServerSideProps} from "next";
+import {GetServerSideProps, GetServerSidePropsContext} from "next";
 
 interface BlogProps {
   posts?: any,
 }
 
-const Blog = () => {
+const Blog = ({posts}:BlogProps) => {
   const {t: commonT} = useTranslation("common");
   const {t: blogT} = useTranslation("blog_page");
   
@@ -42,33 +42,8 @@ const Blog = () => {
 
 export default Blog;
 
-export const getServerSideProps  = async (context: any) =>{
-  console.log('AAAAAAAAAAAAA--->BBBBBBBBBBBBBBBBBBBBBBBBBBBBB');
-  
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   return {
-        props: {
-          x:1,
-        },
-  }
-  // try {
-  //   const translations = (await serverSideTranslations(context.locale ?? "en", [
-  //     "common",
-  //     "blog_page",
-  //   ]));
-  //
-  //   let post: any = {};
-  //
-  //   return {
-  //     props: {
-  //       ...translations,
-  //     },
-  //   };
-  // } catch (e) {
-  //   console.error('Error fetching data:', e);
-  //   return {
-  //     props: {
-  //       postData: null,
-  //     },
-  //   };
-  // }
+    props: { posts: {} }
+}
 }
