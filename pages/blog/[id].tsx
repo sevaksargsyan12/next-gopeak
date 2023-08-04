@@ -188,7 +188,7 @@ const Blog = ({post}: any) => {
 
 export default Blog;
 
-export async function getServerSideProps(context: any) {
+export async function getStaticProps(context: any) {
   const postId = context.params.id;
   
   const translations = (await serverSideTranslations(context.locale ?? "en", [
