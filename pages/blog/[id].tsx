@@ -44,6 +44,10 @@ export default Blog;
 
 export const getServerSideProps  = async (context: any) =>{
   console.log('AAAAAAAAAAAAA--->BBBBBBBBBBBBBBBBBBBBBBBBBBBBB');
+  
+  return {
+    x:1
+  }
   // try {
   //   const translations = (await serverSideTranslations(context.locale ?? "en", [
   //     "common",
