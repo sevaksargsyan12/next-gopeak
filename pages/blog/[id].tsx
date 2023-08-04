@@ -67,7 +67,7 @@ const Blog = ({post}: any) => {
   
   types = acf?.types;
   const title = blogT("title");
-
+  
   return (
     
     <Layout t={commonT}>
@@ -78,7 +78,108 @@ const Blog = ({post}: any) => {
       </Head>
       <RoutingPath paths={["Home", "Blog"]}/>
       <>
-        ABCDEFGH
+        {(!post.id) ?
+          (<section className="pt-35 pt-sm-50 pt-md-45 pb-30 pb-sm-40 pb-md-45 col-12 m-auto">
+            Post not found
+          </section>) : (
+            <>
+              <div className="pt-35 pt-sm-50 pt-md-45 pb-30 pb-sm-40 pb-md-45 col-12 m-auto single-post">
+                <div className="single-post-title">
+                  <h1>{post.title}</h1>
+                </div>
+                <div className="single-post-wrapper">
+                  <section className="head-content">
+                    <div className="post-date">
+                      <div className="date">
+                        {post.date}
+                      </div>
+                      <div className="read">
+                        {post.readMinute}
+                      </div>
+                    </div>
+                    {acf?.social_button?.length ? (
+                      <div className="social-buttons">
+                        {acf.social_button.map((socialBtn: any, index: number) => {
+                          return (<Link key={index} href={socialBtn.link}>
+                            <Image src={socialBtn.social_icon} alt="social"/>
+                          </Link>)
+                        })}
+                      </div>) : null}
+                    {acf?.author?.name ? <div className="author-block acf-mobile">
+                        <div className="avatar-block">
+                          {acf?.author?.avatar && (<div className="img">
+                            <Image alt={acf?.author?.name || ''} src={acf?.author?.avatar}/>
+                          </div>)}
+                        </div>
+                        <div className="link-block">
+                          {acf?.author?.name && (
+                            <div className="link">
+                              <Link href={acf?.author?.url || '#'}>{acf?.author?.name || ''}</Link>
+                            </div>)}
+                          {acf?.author?.social_icon &&
+                            (<div className="img">
+                              <Image alt={acf?.author?.name || ''} src={acf?.author?.social_icon }/>
+                            </div>)}
+                        </div>
+                        {acf?.author?.description  && <div className="content-block" dangerouslySetInnerHTML={{__html: acf?.author?.description }}></div>}
+                      </div>
+                      : null}
+                    <div className="post-description" dangerouslySetInnerHTML={{__html: post.content}}>
+                    </div>
+                  </section>
+                  {tableContent?.length ? <TableContent tableContent={tableContent}/> : null}
+                  {types?.items?.length ? <TableTypes types={types}/> : null}
+                  <section className="section-contents">
+                    <div className="content">
+                      {
+                        sectionContents.map((item: any, index: number) => {
+                          if (item.type === 'item') showContentIndex++;
+                          return (<div key={index} className={`content-item ${item.type}`}>
+                            {item.type === 'item' ? (<h3 id={item.html_id}>{showContentIndex}. {item.title}</h3>) : (
+                              <h4 id={item.html_id}>{item.title}</h4>)}
+                            <div className="content-description" dangerouslySetInnerHTML={{__html: item.content}}>
+                            </div>
+                          </div>)
+                        })}
+                    </div>
+                  </section>
+                  {types?.items?.length ? <section className="section-types">
+                    <h3>{showContentIndex + 1}. {types.title}</h3>
+                    <p>{types.small_content}</p>
+                    <div className="content">
+                      {
+                        types?.items?.length && types.items.map((item: any, index: number) => {
+                          return (
+                            <div key={index} className="content-item">
+                              <div className="content-item-title">
+                                <span className="icon">
+                                  <IconCaret/>
+                                </span>
+                                <h4 id={item.html_id}>{item.title}</h4>
+                              </div>
+                              <div className="content-item-description" dangerouslySetInnerHTML={{__html: item.content}}>
+                              </div>
+                            </div>)
+                        })}
+                      {types?.last_block && <LastBLock types={types}/>}
+                    </div>
+                  </section> : null}
+                  {acf?.final && <SectionFinal final={acf?.final}/>}
+                </div>
+                <SideBar {...acf?.author} banner={acf?.banner}/>
+              </div>
+              <div className="similar-posts">
+                <h4>{similarTitle}</h4>
+                <div className="posts-block">
+                  {(similars.map((post, index) => {
+                    return (<PostItem key={post.id} {...post} type="medium"/>)
+                  }))}
+                </div>
+              </div>
+              <GetInterestingStaff/>
+            </>
+          )}
+        <ScrollToTop smooth component={<IconScrollTop/>}/>
       </>
     </Layout>
   );
@@ -88,7 +189,6 @@ export default Blog;
 
 export async function getServerSideProps(context: any) {
   const postId = context.params.id;
-  console.log({postId});
   
   const translations = (await serverSideTranslations(context.locale ?? "en", [
     "common",

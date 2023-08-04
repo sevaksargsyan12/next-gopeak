@@ -56,7 +56,6 @@ const Footer: FC<FooterProps> = ({ t }) => {
               <div className="p-5 mb-15 col-12 col-sm-4" key={i + name}>
                 <p className="text-md m-0 text-color-white mb-10">{name}</p>
                 <div>
-                  
                   {items?.length && (items.map((item, i) => {
                     return (
                       <Link
