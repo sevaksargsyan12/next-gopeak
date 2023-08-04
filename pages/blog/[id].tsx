@@ -195,6 +195,8 @@ export async function getServerSideProps(context: any) {
     "common",
     "blog_page",
   ]));
+  console.log('locale --> ', context.locale);
+  console.log({translations});
   
   let post: any = {};
   
