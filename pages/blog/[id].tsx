@@ -36,7 +36,7 @@ const Blog = () => {
     
     <Layout t={commonT}>
       <Head>
-        <title>kokol</title>
+        <title>kokol1</title>
         <meta title={title}/>
         <link rel="canonical" href="https://gopeak.io/blog"/>
       </Head>
