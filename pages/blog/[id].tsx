@@ -43,25 +43,26 @@ const Blog = () => {
 export default Blog;
 
 export const getServerSideProps  = async (context: any) =>{
-  try {
-    const translations = (await serverSideTranslations(context.locale ?? "en", [
-      "common",
-      "blog_page",
-    ]));
-    
-    let post: any = {};
-    
-    return {
-      props: {
-        ...translations,
-      },
-    };
-  } catch (e) {
-    console.error('Error fetching data:', e);
-    return {
-      props: {
-        postData: null,
-      },
-    };
-  }
+  console.log('AAAAAAAAAAAAA--->BBBBBBBBBBBBBBBBBBBBBBBBBBBBB');
+  // try {
+  //   const translations = (await serverSideTranslations(context.locale ?? "en", [
+  //     "common",
+  //     "blog_page",
+  //   ]));
+  //
+  //   let post: any = {};
+  //
+  //   return {
+  //     props: {
+  //       ...translations,
+  //     },
+  //   };
+  // } catch (e) {
+  //   console.error('Error fetching data:', e);
+  //   return {
+  //     props: {
+  //       postData: null,
+  //     },
+  //   };
+  // }
 }
