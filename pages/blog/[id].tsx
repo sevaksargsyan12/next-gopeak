@@ -46,7 +46,9 @@ export const getServerSideProps  = async (context: any) =>{
   console.log('AAAAAAAAAAAAA--->BBBBBBBBBBBBBBBBBBBBBBBBBBBBB');
   
   return {
-    x:1
+        props: {
+          x:1,
+        },
   }
   // try {
   //   const translations = (await serverSideTranslations(context.locale ?? "en", [
