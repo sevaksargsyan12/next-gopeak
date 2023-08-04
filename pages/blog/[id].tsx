@@ -78,23 +78,7 @@ const Blog = ({post}: any) => {
       </Head>
       <RoutingPath paths={["Home", "Blog"]}/>
       <>
-        {(!post.id) ?
-          (<section className="pt-35 pt-sm-50 pt-md-45 pb-30 pb-sm-40 pb-md-45 col-12 m-auto">
-            Post not found
-          </section>) : (
-            <>
-              <div className="similar-posts">
-                <h4>{similarTitle}</h4>
-                <div className="posts-block">
-                  {(similars.map((post, index) => {
-                    return (<PostItem key={post.id} {...post} type="medium"/>)
-                  }))}
-                </div>
-              </div>
-              <GetInterestingStaff/>
-            </>
-          )}
-        <ScrollToTop smooth component={<IconScrollTop/>}/>
+        ABCDEFGH
       </>
     </Layout>
   );
@@ -104,6 +88,7 @@ export default Blog;
 
 export async function getServerSideProps(context: any) {
   const postId = context.params.id;
+  console.log({postId});
   
   const translations = (await serverSideTranslations(context.locale ?? "en", [
     "common",
