@@ -49,7 +49,7 @@ const Footer: FC<FooterProps> = ({ t }) => {
           </div>
         </div>
         <div className="d-flex flex-wrap col-12 col-md-7 justify-content-between">
-          {linkColumns?.length && linkColumns.map((x,i) => {console.log('LLLINK->',x); return <div key={i}>XXXXXXX</div>})}
+          {[1,2,3].map((x,i) => {console.log('LLLINK->',x); return <div key={i}>XXXXXXX</div>})}
           {/*{linkColumns?.map((column, i) => {*/}
           {/*  const { items, name } = column;*/}
           
