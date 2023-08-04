@@ -21,8 +21,7 @@ import TableTypes from "../../components/pages/SingleBlog/TableTypes";
 import Image from "next/image";
 import {useRouter} from "next/router";
 
-const Blog = ({post}: any) => {
-  const router = useRouter();
+const Blog = () => {
   const {t: commonT} = useTranslation("common");
   const {t: blogT} = useTranslation("blog_page");
   
@@ -32,7 +31,7 @@ const Blog = ({post}: any) => {
     
     <Layout t={commonT}>
       <Head>
-        <title>{post.title}</title>
+        <title>kokol</title>
         <meta title={title}/>
         <link rel="canonical" href="https://gopeak.io/blog"/>
       </Head>
@@ -51,8 +50,6 @@ export default Blog;
 
 export async function getServerSideProps(context: any) {
   try {
-    const postId = context.params.id;
-    
     const translations = (await serverSideTranslations(context.locale ?? "en", [
       "common",
       "blog_page",
@@ -60,16 +57,8 @@ export async function getServerSideProps(context: any) {
     
     let post: any = {};
     
-    // Fetch data from the server using postId
-    // Replace this with your actual data fetching logic
-    if (postId) {
-      const res = await fetch(`${BACKEND_API_URL}/single/${postId}`);
-      post = await res.json();
-    }
-    // Pass the fetched data as props to the component
     return {
       props: {
-        post,
         ...translations,
       },
     };
