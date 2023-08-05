@@ -20,6 +20,7 @@ import TableTypes from "../../components/pages/SingleBlog/TableTypes";
 
 
 import Image from "next/image";
+import {GetStaticPaths} from "next";
 
 const Blog = ({post}: any) => {
   const {t: commonT} = useTranslation("common");
@@ -187,6 +188,23 @@ const Blog = ({post}: any) => {
 };
 
 export default Blog;
+
+
+export const getStaticPaths: GetStaticPaths = async (context: any) => {
+  const postId = context.params.id;
+  console.log('AAAAAAAAAAAAA_BBBBBBBBBBBBBBBBB->',{postId});
+  // Define the possible postIds for which pages should be pre-rendered
+  const possiblePostIds = ['post1', 'post2', 'post3']; // Replace with your actual postIds
+  
+  const paths = possiblePostIds.map((postId) => ({
+    params: { id: postId },
+  }));
+  
+  return {
+    paths,
+    fallback: false,
+  };
+};
 
 export async function getStaticProps(context: any) {
   const postId = context.params.id;
