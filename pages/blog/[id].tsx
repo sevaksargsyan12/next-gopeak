@@ -191,13 +191,21 @@ export default Blog;
 
 
 export const getStaticPaths: GetStaticPaths = async (context: any) => {
-  const postId = context.params.id;
-  console.log('AAAAAAAAAAAAA_BBBBBBBBBBBBBBBBB->',{postId});
+  // const postId = context.params.id;
+  // console.log('AAAAAAAAAAAAA_BBBBBBBBBBBBBBBBB->',{postId});
   // Define the possible postIds for which pages should be pre-rendered
   const possiblePostIds = ['post1', 'post2', 'post3']; // Replace with your actual postIds
   
-  const paths = possiblePostIds.map((postId) => ({
-    params: { id: postId },
+  const response = await fetch(`${BACKEND_API_URL}/popular-posts`);
+  const articles = await response.json();
+  const responseLatestPosts = await fetch(`${BACKEND_API_URL}/latest-posts?per_page=6&limit=6&offset=0`);
+  const latestPosts = await responseLatestPosts.json();
+  
+  const posts = [...articles, ...latestPosts?.posts];
+  console.log({posts});
+  
+  const paths = posts.map((post) => ({
+    params: { id: post.slug.toString() },
   }));
   
   return {
