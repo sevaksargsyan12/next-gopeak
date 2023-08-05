@@ -1,4 +1,4 @@
-export const BACKEND_API_URL_BASE = 'https://api5.codexg.com/wp-json';
+export const BACKEND_API_URL_BASE = 'https://api5.codexg.com/wp-json/wp/v2';
 export const BACKEND_API_URL = 'https://api5.codexg.com/wp-json/gp/v1';
 import {IPost} from "../components/pages/Blog/LatestArticles";
 import {ILatestPosts} from "../components/pages/Blog/LatestArticles";

@@ -52,7 +52,7 @@ const Footer: FC<FooterProps> = ({ t }) => {
           <pre>
             {JSON.stringify(linkColumns)}
           </pre>
-          {[1,2,3].map((x,i) => {console.log('LLLINK->',x); return <div key={i}>XXXXXXX</div>})}
+          {[1,2,3].map((x,i) => { return <div key={i}>XXXXXXX</div>})}
           {/*{linkColumns?.map((column, i) => {*/}
           {/*  const { items, name } = column;*/}
           

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Head from "next/head";
 import {useTranslation} from "next-i18next";
 import ScrollToTop from "react-scroll-to-top";
-import {BACKEND_API_URL} from "../../utils/api";
+import {BACKEND_API_URL, BACKEND_API_URL_BASE} from "../../utils/api";
 import Layout from "../../components/shared/Layout";
 import RoutingPath from "../../components/shared/RoutingPath";
 import LatestArticles, {IPost} from "../../components/pages/Blog/LatestArticles";
@@ -74,7 +74,7 @@ const Blog = ({post}: any) => {
     
     <Layout t={commonT}>
       <Head>
-        <title>{post.title}AAAAAAAAAAAAAAA</title>
+        <title>{post.title}</title>
         <meta title={title}/>
         <link rel="canonical" href="https://gopeak.io/blog"/>
       </Head>
@@ -189,23 +189,38 @@ const Blog = ({post}: any) => {
 
 export default Blog;
 
+async function getAllPosts(): Promise<{slug: string}[]> {
+  try {
+    const allPosts = [];
+    let page = 1;
+    
+    // Fetch each page of posts until there are no more pages
+    while (true) {
+      const response = await fetch(`${BACKEND_API_URL_BASE}/posts?page=${page}&_fields=slug,link`);
+      if (response.statusText !== 'OK') {
+        break;
+      }
+      
+      const posts = await response.json();
+      
+      if (posts.length === 0) {
+        break;
+      }
+      
+      allPosts.push(...posts);
+      page++;
+    }
+    
+    return allPosts;
+  } catch (error) {
+    return [];
+  }
+}
 
 export const getStaticPaths: GetStaticPaths = async (context: any) => {
-  // const postId = context.params.id;
-  // console.log('AAAAAAAAAAAAA_BBBBBBBBBBBBBBBBB->',{postId});
-  // Define the possible postIds for which pages should be pre-rendered
-  const possiblePostIds = ['post1', 'post2', 'post3']; // Replace with your actual postIds
-  
-  const response = await fetch(`${BACKEND_API_URL}/popular-posts`);
-  const articles = await response.json();
-  const responseLatestPosts = await fetch(`${BACKEND_API_URL}/latest-posts?per_page=6&limit=6&offset=0`);
-  const latestPosts = await responseLatestPosts.json();
-  
-  const posts = [...articles, ...latestPosts?.posts];
-  console.log({posts});
-  
+  const posts = (await getAllPosts()) ?? [];
   const paths = posts.map((post) => ({
-    params: { id: post.slug.toString() },
+    params: { id: post.slug },
   }));
   
   return {
@@ -216,14 +231,10 @@ export const getStaticPaths: GetStaticPaths = async (context: any) => {
 
 export async function getStaticProps(context: any) {
   const postId = context.params.id;
-  
   const translations = (await serverSideTranslations(context.locale ?? "en", [
     "common",
     "blog_page",
   ]));
-  console.log('locale --> ', context.locale);
-  console.log({translations});
-  
   let post: any = {};
   
   // Fetch data from the server using postId
@@ -235,7 +246,6 @@ export async function getStaticProps(context: any) {
   // Pass the fetched data as props to the component
   return {
     props: {
-      x:1,
       post,
       ...translations,
     },
