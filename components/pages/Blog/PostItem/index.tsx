@@ -54,7 +54,7 @@ const PostItem = (props: IPostItemProps) => {
       </div>
       {(img) ? (<div className={`post-image-block ${type === 'small' ? 'w-50' : 'w-100'}`}>
         <div className="img">
-          <Image width={400} height={400} alt={title} src={'https://api5.codexg.com/wp-content/uploads/2023/07/86c9bf404eb508c5200dd61af962f315.jpg'}/>
+          <Image width={400} height={400} alt={title} src={img}/>
         </div>
       </div>) : null}
     </div>
