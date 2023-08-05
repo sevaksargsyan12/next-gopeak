@@ -4,6 +4,16 @@ const { i18n } = require("./next-i18next.config");
 const nextConfig = {
   i18n,
   reactStrictMode: true,
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'api5.codexg.com',
+                // port: '',
+                // pathname: '/account123/**',
+            },
+        ],
+    },
   webpack: (config, { isServer }) => {
     // Replace React with Preact in production mode
     if (!isServer && process.env.NODE_ENV === "production") {

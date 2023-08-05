@@ -17,7 +17,7 @@ const SideBar = ({avatar, url, name, social_icon, description, banner}: SideBarP
       {name ? <div className="author-block">
           <div className="avatar-block">
             {avatar && (<div className="img">
-              <Image alt={name} src={avatar}/>
+              <Image width={300} height={300}  alt={name} src={avatar}/>
             </div>)}
           </div>
           <div className="link-block">
@@ -27,7 +27,7 @@ const SideBar = ({avatar, url, name, social_icon, description, banner}: SideBarP
               </div>)}
             {social_icon &&
               (<div className="img">
-                <Image alt={name} src={social_icon}/>
+                <Image width={300} height={300} alt={name} src={social_icon}/>
               </div>)}
           </div>
           {description && <div className="content-block" dangerouslySetInnerHTML={{__html: description}}></div>}

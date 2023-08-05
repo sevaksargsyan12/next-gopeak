@@ -102,14 +102,14 @@ const Blog = ({post}: any) => {
                       <div className="social-buttons">
                         {acf.social_button.map((socialBtn: any, index: number) => {
                           return (<Link key={index} href={socialBtn.link}>
-                            <Image src={socialBtn.social_icon} alt="social"/>
+                            <Image width={400} height={400} src={socialBtn.social_icon} alt="social"/>
                           </Link>)
                         })}
                       </div>) : null}
                     {acf?.author?.name ? <div className="author-block acf-mobile">
                         <div className="avatar-block">
                           {acf?.author?.avatar && (<div className="img">
-                            <Image src={acf?.author?.avatar} alt={''}/>
+                            <Image width={400} height={400} src={acf?.author?.avatar} alt={''}/>
                           </div>)}
                         </div>
                         <div className="link-block">
@@ -119,7 +119,7 @@ const Blog = ({post}: any) => {
                             </div>)}
                           {acf?.author?.social_icon &&
                             (<div className="img">
-                              <Image src={acf?.author?.social_icon } alt={''}/>
+                              <Image width={400} height={400} src={acf?.author?.social_icon } alt={''}/>
                             </div>)}
                         </div>
                         {acf?.author?.description  && <div className="content-block" dangerouslySetInnerHTML={{__html: acf?.author?.description }}></div>}
@@ -188,7 +188,7 @@ const Blog = ({post}: any) => {
 
 export default Blog;
 
-export async function getStaticProps(context: any) {
+export async function getServerSideProps(context: any) {
   const postId = context.params.id;
   
   const translations = (await serverSideTranslations(context.locale ?? "en", [
