@@ -49,32 +49,28 @@ const Footer: FC<FooterProps> = ({ t }) => {
           </div>
         </div>
         <div className="d-flex flex-wrap col-12 col-md-7 justify-content-between">
-          <pre>
-            {JSON.stringify(linkColumns)}
-          </pre>
-          {[1,2,3].map((x,i) => { return <div key={i}>XXXXXXX</div>})}
-          {/*{linkColumns?.map((column, i) => {*/}
-          {/*  const { items, name } = column;*/}
+          {linkColumns?.map((column, i) => {
+            const { items, name } = column;
           
-          {/*  return (*/}
-          {/*    <div className="p-5 mb-15 col-12 col-sm-4" key={i + name}>*/}
-          {/*      <p className="text-md m-0 text-color-white mb-10">{name}</p>*/}
-          {/*      <div>*/}
-          {/*        {items?.length && (items.map((item, i) => {*/}
-          {/*          return (*/}
-          {/*            <Link*/}
-          {/*              key={i + item.href}*/}
-          {/*              href={item.href}*/}
-          {/*              className="d-block text-sm m-0 mb-5 text-color-white-85 footer-link cursor-pointer mxw-max-content"*/}
-          {/*            >*/}
-          {/*              {item.name}*/}
-          {/*            </Link>*/}
-          {/*          );*/}
-          {/*        }))}*/}
-          {/*      </div>*/}
-          {/*    </div>*/}
-          {/*  );*/}
-          {/*})}*/}
+            return (
+              <div className="p-5 mb-15 col-12 col-sm-4" key={i + name}>
+                <p className="text-md m-0 text-color-white mb-10">{name}</p>
+                <div>
+                  {items?.length && (items.map((item, i) => {
+                    return (
+                      <Link
+                        key={i + item.href}
+                        href={item.href}
+                        className="d-block text-sm m-0 mb-5 text-color-white-85 footer-link cursor-pointer mxw-max-content"
+                      >
+                        {item.name}
+                      </Link>
+                    );
+                  }))}
+                </div>
+              </div>
+            );
+          })}
           <div className=" p-5 mb-15">
             <p className="text-md m-0 text-color-white mb-10 col-12 col-sm-4">
               {contactsColumns.name}
