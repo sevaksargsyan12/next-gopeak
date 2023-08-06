@@ -1,4 +1,10 @@
 .single-post {
+  margin: 0 auto;
+  max-width: 1113px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
   .acf-mobile {
     display: none;
   }
@@ -12,11 +18,6 @@
     letter-spacing: 0.18px;
   }
 
-  margin: 0 auto;
-  max-width: 1113px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   .single-post-title {
     width: 100%;
   }
@@ -210,7 +211,9 @@
 
   .single-post-sidebar {
     width: 22.3%;
-    height: 100vh;
+    position: sticky;
+    height: auto;
+    top: 0;
 
     .banner-block {
       margin-top: 20px;
